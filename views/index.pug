@@ -1,0 +1,16 @@
+extends default
+
+block content
+  div.container
+    dive.tool
+      div.tool-image(style=`background: url('/images/argo.png') top center
+      no-repeat; background-size: cover;`)
+      a(href=`/profile?toolname=ArgoCD`).button
+        | ArgoCD 
+    each tool in tools
+      div.tool
+        div.tool-image(style=`background: url('/images/${tool.imgSrc}') top center
+        no-repeat; background-size: cover;`)
+        a(href=`//${tool.link}`).button
+          | #{tool.toolname} 
+    

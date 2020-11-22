@@ -1,0 +1,31 @@
+{
+    "totos": [
+      {
+        "toolname": "CircleCI",
+        "link": "app.circleci.com/pipelines/github/FinalCAD",
+        "imgSrc": "circle.png"
+      },
+      {
+        "toolname": "github",
+        "link": "github.com/FinalCAD",
+        "imgSrc": "github.jpeg"
+      },
+      {
+        "toolname": "Dynatrace",
+        "link": "srx50436.live.dynatrace.com/",
+        "imgSrc": "dynatrace.jpg"
+      },
+
+      {
+        "toolname": "StatusCake",
+        "link": "app.statuscake.com/YourStatus2.php?View=109407",
+        "imgSrc": "statuscake.png"
+      },
+
+      {
+        "toolname": "Microtica",
+        "link": "microtica.com/",
+        "imgSrc": "microtica.jpeg"
+      }
+    ]
+  }

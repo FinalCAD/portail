@@ -1,0 +1,91 @@
+
+version: 2.1
+
+orbs:
+  aws-ecr: circleci/aws-ecr@6.10.0
+  deploy: finalcad/deploy-eks-app@0.3.1
+common-build-deploy: &COMMON_BUILD_DEPLOY
+    repo: infra/protail
+default_build: &DEFAULT_BUILD
+    create-repo: true
+    tag: 'latest,${CIRCLE_SHA1}'
+    path: ./
+    dockerfile: Dockerfile
+    account-url: AWS_ECR_ACCOUNT_URL
+    aws-access-key-id: AWS_ACCESS_KEY_ID
+    aws-secret-access-key: AWS_SECRET_ACCESS_KEY 
+    region: AWS_DEFAULT_REGION
+
+
+workflows:
+    main:
+        jobs:
+            - build:
+                context:
+                    - dockerhub
+            ###### DEPLOY TO SANDBOX ################################# 
+            - build_app:
+                name: build-and-push-image-sandbox
+                context: 
+                    - ecr-sandbox
+                    - dockerhub
+                filters:
+                    branches:
+                        only:
+                            - develop
+            - deploy/deploy-app:
+                <<: *COMMON_BUILD_DEPLOY
+                context: 
+                    - ecr-sandbox
+                    - dockerhub
+                regions: eu-central-1
+                requires:
+                    - build-and-push-image-sandbox
+                filters:
+                    branches:
+                        only:
+                            - develop
+            ###### DEPLOY TO STAGING #################################
+            - build_app:
+                name: build-and-push-image-staging
+                context: 
+                    - ecr-staging
+                    - dockerhub
+                filters:
+                    branches:
+                        only:
+                            - staging
+            - deploy/deploy-app:
+                <<: *COMMON_BUILD_DEPLOY
+                context: 
+                    - ecr-staging
+                    - dockerhub
+                regions: eu-central-1
+                requires:
+                - build-and-push-image-staging
+                filters:
+                    branches:
+                        only:
+                            - staging 
+            ###### DEPLOY TO PRODUCTION #################################
+            - build_app:
+                name: build-and-push-image-production
+                context: 
+                    - ecr-production
+                    - dockerhub
+                filters:
+                    branches:
+                        only:
+                            - master
+            - deploy/deploy-app:
+                <<: *COMMON_BUILD_DEPLOY
+                context: 
+                    - ecr-production
+                    - dockerhub
+                regions: eu-central-1
+                requires:
+                - build-and-push-image-production
+                filters:
+                    branches:
+                        only:
+                            - master 
