@@ -19,9 +19,6 @@ default_build: &DEFAULT_BUILD
 workflows:
     main:
         jobs:
-            - build:
-                context:
-                    - dockerhub
             ###### DEPLOY TO SANDBOX ################################# 
             - build_app:
                 name: build-and-push-image-sandbox
