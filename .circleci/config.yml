@@ -19,14 +19,26 @@ default_build: &DEFAULT_BUILD
 executors:
     default-image-docker:
         machine:
-            image: ubuntu-1604:202004-01
+            image: node:12
+
+commands:
+    docker-login:
+        description: Login to Docker registries
+        steps:
+            - run:
+                name: Login Docker Github.com
+                command: echo ${GITHUB_TOKEN} | docker login docker.pkg.github.com --username dummy_user --password-stdin
+            - run:
+                name: Login to https://hub.docker.com/
+                command: |
+                    echo ${DOCKERHUB_ACCESS_TOKEN} | docker login --username ${DOCKERHUB_USERNAME} --password-stdin
 
 jobs:
     build_app:
       executor: default-image-docker
       environment:
-        IMAGE_NAME: notification-center
-        DOCKERFILE_FOLDER: NotificationCenter.API
+        IMAGE_NAME: protail
+        DOCKERFILE_FOLDER: .
       steps:
         - docker-login
         - aws-ecr/build-and-push-image:
