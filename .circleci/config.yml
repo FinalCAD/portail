@@ -16,6 +16,22 @@ default_build: &DEFAULT_BUILD
     aws-secret-access-key: AWS_SECRET_ACCESS_KEY 
     region: AWS_DEFAULT_REGION
 
+executors:
+    default-image-docker:
+        machine:
+            image: ubuntu-1604:202004-01
+
+jobs:
+    build_app:
+      executor: default-image-docker
+      environment:
+        IMAGE_NAME: notification-center
+        DOCKERFILE_FOLDER: NotificationCenter.API
+      steps:
+        - docker-login
+        - aws-ecr/build-and-push-image:
+            <<: *DEFAULT_BUILD
+            <<: *COMMON_BUILD_DEPLOY
 workflows:
     main:
         jobs:
