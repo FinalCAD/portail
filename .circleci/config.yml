@@ -19,7 +19,7 @@ default_build: &DEFAULT_BUILD
 executors:
     default-image-docker:
         machine:
-            image: node:12
+            image: ubuntu-1604:202004-01
 
 commands:
     docker-login:
