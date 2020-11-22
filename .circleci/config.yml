@@ -5,7 +5,7 @@ orbs:
   aws-ecr: circleci/aws-ecr@6.10.0
   deploy: finalcad/deploy-eks-app@0.3.1
 common-build-deploy: &COMMON_BUILD_DEPLOY
-    repo: infra/protail
+    repo: infra/portail
 default_build: &DEFAULT_BUILD
     create-repo: true
     tag: 'latest,${CIRCLE_SHA1}'
@@ -37,7 +37,7 @@ jobs:
     build_app:
       executor: default-image-docker
       environment:
-        IMAGE_NAME: protail
+        IMAGE_NAME: portail
         DOCKERFILE_FOLDER: .
       steps:
         - docker-login
