@@ -1,45 +1,47 @@
 {
     "envs": [
-    {
-      "toolname": "ArgoCD",
-      "lastname": "Staging",
-      "bio": "Frankfurt",
-      "link": "argocd.priv.eu.staging.finalcad.cloud/",
-      "imgSrc": "argo.png",
-      "info": "Need VPN",
-      "id": "test"
-    },
-    {
-      "toolname": "ArgoCD",
-      "lastname": "Sandbox",
-      "bio": "Frankfurt",
-      "link": "argocd.priv.eu.sandbox.finalcad.cloud/",
-      "imgSrc": "argo.png",
-      "id": "tom"
-    },
-    {
-      "toolname": "ArgoCD",
-      "lastname": "Staging",
-      "bio": "Tokyo",
-      "link": "argocd.priv.ap.staging.finalcad.cloud/",
-      "imgSrc": "argo.png",
-      "id": "tom"
-    },
-    {
-      "toolname": "ArgoCD",
-      "lastname": "Production",
-      "bio": "Frankfurt",
-      "link": "argocd.priv.eu.finalcad.cloud/",
-      "imgSrc": "argo.png",
-      "id": "tom"
-    },
-    {
-      "toolname": "ArgoCD",
-      "lastname": "Production",
-      "bio":"Tokyo",
-      "link": "argocd.priv.ap.finalcad.cloud/",
-      "imgSrc": "argo.png",
-      "id": "tom"
-    }
+      {
+        "toolname": "ArgoCD",
+        "lastname": "Sandbox",
+        "bio": "Frankfurt",
+        "link": "argocd.priv.eu.sandbox.finalcad.cloud/",
+        "imgSrc": "argo.png",
+        "id": "tom"
+      },
+
+      {
+        "toolname": "ArgoCD",
+        "lastname": "Staging",
+        "bio": "Frankfurt",
+        "link": "argocd.priv.eu.staging.finalcad.cloud/",
+        "imgSrc": "argo.png",
+        "info": "Need VPN",
+        "id": "test"
+      },
+  
+      {
+        "toolname": "ArgoCD",
+        "lastname": "Staging",
+        "bio": "Tokyo",
+        "link": "argocd.priv.ap.staging.finalcad.cloud/",
+        "imgSrc": "argo.png",
+        "id": "tom"
+      },
+      {
+        "toolname": "ArgoCD",
+        "lastname": "Production",
+        "bio": "Frankfurt",
+        "link": "argocd.priv.eu.finalcad.cloud/",
+        "imgSrc": "argo.png",
+        "id": "tom"
+      },
+      {
+        "toolname": "ArgoCD",
+        "lastname": "Production",
+        "bio":"Tokyo",
+        "link": "argocd.priv.ap.finalcad.cloud/",
+        "imgSrc": "argo.png",
+        "id": "tom"
+      }
    ]
   }
