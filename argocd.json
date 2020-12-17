@@ -6,7 +6,7 @@
         "bio": "Frankfurt",
         "link": "argocd.priv.eu.sandbox.finalcad.cloud/",
         "imgSrc": "argo.png",
-        "id": "tom"
+        "id": "sandbox-eu"
       },
 
       {
@@ -16,7 +16,7 @@
         "link": "argocd.priv.eu.staging.finalcad.cloud/",
         "imgSrc": "argo.png",
         "info": "Need VPN",
-        "id": "test"
+        "id": "staging-eu"
       },
   
       {
@@ -25,7 +25,7 @@
         "bio": "Tokyo",
         "link": "argocd.priv.ap.staging.finalcad.cloud/",
         "imgSrc": "argo.png",
-        "id": "tom"
+        "id": "staging-ap"
       },
       {
         "toolname": "ArgoCD",
@@ -33,7 +33,7 @@
         "bio": "Frankfurt",
         "link": "argocd.priv.eu.finalcad.cloud/",
         "imgSrc": "argo.png",
-        "id": "tom"
+        "id": "production-eu"
       },
       {
         "toolname": "ArgoCD",
@@ -41,7 +41,7 @@
         "bio":"Tokyo",
         "link": "argocd.priv.ap.finalcad.cloud/",
         "imgSrc": "argo.png",
-        "id": "tom"
+        "id": "production-ap"
       }
    ]
   }

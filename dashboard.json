@@ -1,0 +1,31 @@
+{
+    "envs": [
+      {
+        "toolname": "kubernetes-dashboard",
+        "lastname": "Sandbox",
+        "bio": "Frankfurt",
+        "link": "kubernetes-dashboard.priv.eu.sandbox.finalcad.cloud/",
+        "imgSrc": "kube.png",
+        "id": "sandbox-eu"
+      },
+
+      {
+        "toolname": "kubernetes-dashboard",
+        "lastname": "Staging",
+        "bio": "Frankfurt",
+        "link": "kubernetes-dashboard.priv.eu.staging.finalcad.cloud/",
+        "imgSrc": "kube.png",
+        "info": "Need VPN",
+        "id": "staging-eu"
+      },
+  
+      {
+        "toolname": "kubernetes-dashboard",
+        "lastname": "Staging",
+        "bio": "Tokyo",
+        "link": "kubernetes-dashboard.priv.ap.staging.finalcad.cloud/",
+        "imgSrc": "kube.png",
+        "id": "staging-ap"
+      }
+   ]
+  }

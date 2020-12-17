@@ -1,6 +1,7 @@
 const express = require("express");
 const tools = require("./tools.json");
 const argocd = require("./argocd.json");
+const kube = require("./dashboard.json");
 const app = express();
 
 
@@ -20,6 +21,13 @@ app.get("/profile", (req, res) => {
   res.render("profile", {
     title: "ArgoCD",
     argocd: argocd.envs
+  });
+});
+
+app.get("/kube", (req, res) => {
+  res.render("kube", {
+    title: "kubernetes-dashboard",
+    kube: kube.envs
   });
 });
 

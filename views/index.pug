@@ -7,6 +7,14 @@ block content
       no-repeat; background-size: cover;`)
       a(href=`/profile?toolname=ArgoCD`).button
         | ArgoCD 
+
+
+    dive.tool
+      div.tool-image(style=`background: url('/images/kube.png') top center
+      no-repeat; background-size: cover;`)
+      a(href=`/kube?toolname=kubernetes-dashboard`).button
+        | Kubernetes-Dashboard 
+
     each tool in tools
       div.tool
         div.tool-image(style=`background: url('/images/${tool.imgSrc}') top center

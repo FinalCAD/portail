@@ -1,0 +1,10 @@
+extends default
+
+block content
+  div.container
+    each k in kube
+      div.k
+        div.tool-image(style=`background: url('/images/${k.imgSrc}') top center
+        no-repeat; background-size: cover;`)
+        a(href=`//${k.link}`).button
+          | #{k.toolname} #{k.lastname} #{k.bio}
