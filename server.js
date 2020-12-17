@@ -31,6 +31,16 @@ app.get("/kube", (req, res) => {
   });
 });
 
+var pjson = require('./package.json');
+console.log(pjson.version);
+
+app.get("/version", (req, res) => {
+  res.render("version", {
+    title: "application version",
+    version: pjson.version
+  });
+});
+
 const server = app.listen(8080, () => {
   console.log(`Express running → PORT ${server.address().port}`);
 });
